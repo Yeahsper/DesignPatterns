@@ -6,6 +6,7 @@ import instruments.Lyrics;
 import instruments.Piano;
 import songs.IVisitor;
 import songs.SevenNationArmy;
+import songs.Song;
 import songs.WhiteFlag;
 
 public class RunProgram {
@@ -18,8 +19,9 @@ public class RunProgram {
 		Lyrics lyrics = new Lyrics();
 		
 		//Songs
-		IVisitor wf = new WhiteFlag();
+		Song wf = new WhiteFlag();
 		IVisitor sna = new SevenNationArmy();
+		WhiteFlag wf1 = new WhiteFlag();
 		
 
 		
@@ -36,6 +38,13 @@ public class RunProgram {
 		guitar.accept(sna);
 		piano.accept(sna);
 		lyrics.accept(sna);
+		
+		//WhiteFlag again
+		System.out.println("\nHow to play " + wf1.getSongName() +" by " + wf1.getArtist());
+		drums.accept(wf1);
+		guitar.accept(wf1);
+		piano.accept(wf1);
+		lyrics.accept(wf1);
 	}
 	
 	
